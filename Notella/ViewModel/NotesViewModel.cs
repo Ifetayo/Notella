@@ -1,12 +1,8 @@
 ﻿using Notella.Model;
 using SQLite;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Windows.Storage;
 
@@ -14,10 +10,7 @@ namespace Notella.ViewModel
 {
     public class NotesViewModel
     {
-        //public ObservableCollection<Note> Notes;
-        static int count = 1;
         public Note Note;
-        //public static string dbPath = Path.Combine(Path.Combine(ApplicationData.Current.LocalFolder.Path, "NotesDB.sqlite"));
 
         public ObservableCollection<Note> Notes
         {
@@ -29,13 +22,12 @@ namespace Notella.ViewModel
         {
             Notes = new ObservableCollection<Note>();
             onCreate();
-           
-            //using (var db = new SQLiteConnection(App.dbPath))
-            //{
-            //    db.CreateTable<Note>();
-            //}
         }
 
+        /**
+        This method checks to see if the database has been created
+        if not, it creates it.
+        */
         private async void onCreate()
         {
             bool h = await CheckFileExists("NotesDB.sqlite");
@@ -48,6 +40,9 @@ namespace Notella.ViewModel
             }
         }
 
+        /**
+        Checks if the database file exists
+        */
         private async Task<bool> CheckFileExists(string fileName)
         {
             try
@@ -63,58 +58,52 @@ namespace Notella.ViewModel
             return false;
         }
 
-        //private async Task<bool> CheckFileExists(string fileName)
-        //{
-        //    try
-        //    {
-        //        var store = await Windows.Storage.ApplicationData.Current.LocalFolder.GetFileAsync(fileName);
-        //        return true;
-        //    }
-        //    catch
-        //    {
-
-        //    }
-        //    return false;
-        //}
-
-        public void loadNote()
+        /**Get all the notes stored*/
+        public void LoadNotes()
         {
-            DatabaseHelperClass dh = new DatabaseHelperClass();
-            //dh.Insert();
-            Notes = dh.ReadNotes();
-            //for (int i = 0; i < 10; i++)
-            //{
-            //    Note = new Note { NoteText = "Note " + count++, NoteDate = DateTime.Now.ToString() };
-            //    Notes.Add(Note);
-            //}
+            DatabaseHelperClass databaseHelper = new DatabaseHelperClass();
+            Notes = databaseHelper.GetAllNotes();
         }
 
+        /**
+        This method gets the selected note object that corresponds
+        with the provided note ID from the DB
+        */
         public Note SelectedNote(int selectedNoteID)
         {
-            DatabaseHelperClass dh = new DatabaseHelperClass();
-            Note = dh.GetSelectedNote(selectedNoteID);
+            DatabaseHelperClass databaseHelper = new DatabaseHelperClass();
+            Note = databaseHelper.GetSelectedNote(selectedNoteID);
             return Note;
         }
 
+        /**
+        This method adds a note to the database
+        */
         public void AddNote(string newNoteText)
         {
-            DatabaseHelperClass dh = new DatabaseHelperClass();
+            DatabaseHelperClass databaseHelper = new DatabaseHelperClass();
             Note note = new Note { NoteText = newNoteText, NoteDate = DateTime.Now.ToString() };
-            dh.AddNote(note);
+            databaseHelper.AddNote(note);
         }
 
+        /**
+        This method updates an edited note
+        */
         public void UpdateNote(Note note, string updatedText)
         {
-            DatabaseHelperClass dh = new DatabaseHelperClass();
+            DatabaseHelperClass databaseHelper = new DatabaseHelperClass();
             note.NoteText = updatedText;
             note.NoteDate = DateTime.Now.ToString();
-            dh.UpdateNote(note);
+            databaseHelper.UpdateNote(note);
         }
 
+        /**
+        This method deletes a note with the note ID
+        */
         public void DeleteNote(int noteID)
         {
-            DatabaseHelperClass dh = new DatabaseHelperClass();
-            dh.DeleteNote(noteID);
+            DatabaseHelperClass databaseHelper = new DatabaseHelperClass();
+            databaseHelper.DeleteNote(noteID);
         }
     }
 }

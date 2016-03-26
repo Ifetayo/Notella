@@ -1,21 +1,7 @@
 ﻿using Notella.Common;
 using Notella.Model;
-using Notella.ViewModel;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.Graphics.Display;
-using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkID=390556
@@ -39,11 +25,17 @@ namespace Notella
             this.navigationHelper.SaveState += this.NavigationHelper_SaveState;
         }
 
+        /**
+        Called when the add command bar button is clicked
+        */
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(NotePage));
         }
 
+        /**
+        Called when a note is selected for update/edit
+        */
         private void NoteSelected(object sender, SelectionChangedEventArgs e)
         {
             if (noteList.SelectedItem != null)
@@ -82,9 +74,6 @@ namespace Notella
         /// session.  The state will be null the first time a page is visited.</param>
         private void NavigationHelper_LoadState(object sender, LoadStateEventArgs e)
         {
-            //App.ViewModel.loadNote();
-            //noteList.ItemsSource = App.ViewModel.Notes;
-            //this.DataContext = App.ViewModel;
         }
 
         /// <summary>
@@ -117,11 +106,12 @@ namespace Notella
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             this.navigationHelper.OnNavigatedTo(e);
-            App.ViewModel.loadNote();
-            //////noteList.ItemsSource = App.ViewModel.Notes;
+            //now the main page UI has been loaded
+            //lets get all the notes stored and display them
+            App.ViewModel.LoadNotes();
             this.DataContext = App.ViewModel;
             //DatabaseHelperClass dbh = new DatabaseHelperClass();
-            //noteList.ItemsSource = dbh.ReadNotes();
+            //noteList.ItemsSource = dbh.GetAllNotes();
         }
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)

@@ -8,14 +8,13 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-
     <Page.BottomAppBar>
         <CommandBar>
             <AppBarButton Icon="Add" Label="Add" Click="AddButton_Click"/>
         </CommandBar>
     </Page.BottomAppBar>
 
-    <Grid x:Name="LayoutRoot" Background="White">
+    <Grid Background="White">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
@@ -26,42 +25,13 @@
             <Rectangle Fill="Crimson" Height="4" Margin="12,0" />
         </StackPanel>
 
-        <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <Grid Grid.Row="1" Margin="12,0,12,0">
-                <!-- <toolkit:LongListMultiSelector x:Name="noteList" SelectionChanged="Note_Selection" ItemsSource="{Binding Notes}">
-               <toolkit:LongListMultiSelector.ItemTemplate>
-                    <DataTemplate>
-                    <Grid>
-                        <StackPanel>
-                                <TextBlock Text="{Binding NoteText}" 
-                           Foreground="Black" TextTrimming="WordEllipsis"/>
-                            <TextBlock Text="{Binding NoteDate, StringFormat='dd-MMMM-yy, hh:mm', TargetNullValue=''}"  FlowDirection="LeftToRight" Foreground="Gray"/>
-                            <Rectangle Height="1" Fill="Crimson"/>
-                        </StackPanel>
-                    </Grid>
-                    </DataTemplate>
-                </toolkit:LongListMultiSelector.ItemTemplate>
-            </toolkit:LongListMultiSelector>-->
-                <!--<phone:LongListSelector x:Name="noteList" SelectionChanged="Note_Selection" ItemsSource="{Binding Notes}">
-                    <phone:LongListSelector.ItemTemplate>
-                        <DataTemplate>
-                            <Grid>
-                                <StackPanel>
-                                    <TextBlock Text="{Binding NoteText}" Foreground="Black" TextTrimming="WordEllipsis"/>
-                                    <TextBlock Text="{Binding NoteDate, StringFormat='dd-MMMM-yy, hh:mm', TargetNullValue=''}"  FlowDirection="LeftToRight" Foreground="Gray"/>
-                                    <Rectangle Height="1" Fill="Crimson"/>
-                                </StackPanel>
-                            </Grid>
-                        </DataTemplate>
-                    </phone:LongListSelector.ItemTemplate>
-                </phone:LongListSelector>-->
-                <ListView x:Name="noteList" SelectionChanged="NoteSelected" ItemsSource="{Binding Notes}" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollMode="Auto">
+               <ListView x:Name="noteList" SelectionChanged="NoteSelected" ItemsSource="{Binding Notes}" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollMode="Auto">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <Grid>
                                 <StackPanel>
-
                                     <TextBlock Text="{Binding NoteText}" Foreground="Black" TextTrimming="WordEllipsis"/>
                                     <TextBlock Text="{Binding NoteDate, TargetNullValue=''}"  FlowDirection="LeftToRight" Foreground="Gray"/>
                                     <Rectangle Height="1" Fill="Crimson"/>
