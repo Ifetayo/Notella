@@ -24,7 +24,6 @@ namespace Notella.ViewModel
         {
             using (var dbConn = new SQLiteConnection(App.dbPath))
             {
-                //List<Notes> myCollection = dbConn.Table<Notes>().ToList();
                 ObservableCollection<Model.Note> ListOfNotes = new ObservableCollection<Model.Note>(dbConn.Table<Model.Note>().OrderByDescending(d => d.NoteDate));
                 return ListOfNotes;
             }
