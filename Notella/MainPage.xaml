@@ -32,9 +32,9 @@
                         <DataTemplate>
                             <Grid>
                                 <StackPanel>
-                                    <TextBlock Text="{Binding NoteText}" Foreground="Black" TextTrimming="WordEllipsis"/>
-                                    <TextBlock Text="{Binding NoteDate, TargetNullValue=''}"  FlowDirection="LeftToRight" Foreground="Gray"/>
-                                    <Rectangle Height="1" Fill="Crimson"/>
+                                    <TextBlock Text="{Binding NoteText}" HorizontalAlignment="Stretch" Foreground="Black" TextTrimming="WordEllipsis"/>
+                                    <TextBlock Text="{Binding NoteDate, TargetNullValue=''}" HorizontalAlignment="Stretch"  FlowDirection="LeftToRight" Foreground="Gray"/>
+                                    <Rectangle Height="1" Fill="Crimson" HorizontalAlignment="Stretch"/>
                                 </StackPanel>
                             </Grid>
                         </DataTemplate>

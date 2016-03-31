@@ -23,6 +23,8 @@ namespace Notella
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += this.NavigationHelper_LoadState;
             this.navigationHelper.SaveState += this.NavigationHelper_SaveState;
+
+            
         }
 
         /// <summary>
@@ -87,6 +89,7 @@ namespace Notella
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             this.navigationHelper.OnNavigatedTo(e);
+            textArea.Focus(FocusState.Programmatic);
             int selectedNoteID = -1;
             if (e.Parameter != null) //this is an edit call
             {
@@ -121,12 +124,14 @@ namespace Notella
                 else
                     Frame.Navigate(typeof(MainPage));
             }
-            
-            App.ViewModel.UpdateNote(this.ContentPanel.DataContext as Note, textArea.Text);
-            if (Frame.CanGoBack)
-                Frame.GoBack();
             else
-                Frame.Navigate(typeof(MainPage));
+            {
+                App.ViewModel.UpdateNote(this.ContentPanel.DataContext as Note, textArea.Text);
+                if (Frame.CanGoBack)
+                    Frame.GoBack();
+                else
+                    Frame.Navigate(typeof(MainPage));
+            }
         }
 
         private void DeleteButtonClick(object sender, RoutedEventArgs e)

@@ -49,7 +49,6 @@ namespace Notella.ViewModel
             try
             {
                 StorageFile store = await ApplicationData.Current.LocalFolder.GetFileAsync(fileName);
-                Debug.WriteLine(store.GetType());
                 return true;
             }
             catch(Exception e)
