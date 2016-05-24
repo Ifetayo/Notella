@@ -7,6 +7,12 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.Resources>
+        <Style x:Key="listItemStyle" TargetType="ListViewItem">
+            <Setter Property="BorderBrush" Value="Red"/>
+            <Setter Property="BorderThickness" Value="0 0 0 2"/>
+        </Style>
+    </Page.Resources>
 
     <Page.BottomAppBar>
         <CommandBar>
@@ -27,14 +33,13 @@
 
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <Grid Grid.Row="1" Margin="12,0,12,0">
-               <ListView x:ConnectionId='2' x:Name="noteList"                                 ItemsSource="{Binding Notes}" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollMode="Auto">
+                <ListView x:ConnectionId='2' x:Name="noteList" ItemContainerStyle="{StaticResource listItemStyle}"                                 ItemsSource="{Binding Notes}" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollMode="Auto" BorderBrush="Red">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <Grid>
                                 <StackPanel>
                                     <TextBlock Text="{Binding NoteText}" HorizontalAlignment="Stretch" Foreground="Black" TextTrimming="WordEllipsis"/>
                                     <TextBlock Text="{Binding NoteDate, TargetNullValue=''}" HorizontalAlignment="Stretch"  FlowDirection="LeftToRight" Foreground="Gray"/>
-                                    <Rectangle Height="1" Fill="Crimson" HorizontalAlignment="Stretch"/>
                                 </StackPanel>
                             </Grid>
                         </DataTemplate>

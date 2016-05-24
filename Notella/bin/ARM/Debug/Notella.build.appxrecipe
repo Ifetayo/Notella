@@ -9,58 +9,58 @@
     <SolutionConfiguration>Debug|ARM</SolutionConfiguration>
     <PackageArchitecture>arm</PackageArchitecture>
     <PackageIdentityName>8f943a75-241a-4d2e-915b-c4808eee0cf1</PackageIdentityName>
-    <IntermediateOutputPath>C:\Users\Ifetayo\Documents\Visual Studio 2015\Projects\Notella\Notella\obj\ARM\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\Ifetayo\Documents\ProjectDeployment\Notella\Notella\obj\ARM\Debug\</IntermediateOutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\Ifetayo\Documents\Visual Studio 2015\Projects\Notella\Notella\bin\ARM\Debug\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\Ifetayo\Documents\ProjectDeployment\Notella\Notella\bin\ARM\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\Ifetayo\Documents\Visual Studio 2015\Projects\Notella\Notella\bin\ARM\Debug\Notella.exe">
+    <AppxPackagedFile Include="C:\Users\Ifetayo\Documents\ProjectDeployment\Notella\Notella\bin\ARM\Debug\Notella.exe">
       <PackagePath>Notella.exe</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\WindowsPhoneApp\v8.1\ExtensionSDKs\SQLite.WP81\3.11.1\Redist\Debug\ARM\sqlite3.dll">
       <PackagePath>sqlite3.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Ifetayo\Documents\Visual Studio 2015\Projects\Notella\Notella\Assets\Logo.scale-240.png">
+    <AppxPackagedFile Include="C:\Users\Ifetayo\Documents\ProjectDeployment\Notella\Notella\Assets\Logo.scale-240.png">
       <PackagePath>Assets\Logo.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Ifetayo\Documents\Visual Studio 2015\Projects\Notella\Notella\Assets\SmallLogo.scale-240.png">
+    <AppxPackagedFile Include="C:\Users\Ifetayo\Documents\ProjectDeployment\Notella\Notella\Assets\SmallLogo.scale-240.png">
       <PackagePath>Assets\SmallLogo.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Ifetayo\Documents\Visual Studio 2015\Projects\Notella\Notella\Assets\SplashScreen.scale-240.png">
+    <AppxPackagedFile Include="C:\Users\Ifetayo\Documents\ProjectDeployment\Notella\Notella\Assets\SplashScreen.scale-240.png">
       <PackagePath>Assets\SplashScreen.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Ifetayo\Documents\Visual Studio 2015\Projects\Notella\Notella\Assets\Square71x71Logo.scale-240.png">
+    <AppxPackagedFile Include="C:\Users\Ifetayo\Documents\ProjectDeployment\Notella\Notella\Assets\Square71x71Logo.scale-240.png">
       <PackagePath>Assets\Square71x71Logo.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Ifetayo\Documents\Visual Studio 2015\Projects\Notella\Notella\Assets\StoreLogo.scale-240.png">
+    <AppxPackagedFile Include="C:\Users\Ifetayo\Documents\ProjectDeployment\Notella\Notella\Assets\StoreLogo.scale-240.png">
       <PackagePath>Assets\StoreLogo.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Ifetayo\Documents\Visual Studio 2015\Projects\Notella\Notella\Assets\WideLogo.scale-240.png">
+    <AppxPackagedFile Include="C:\Users\Ifetayo\Documents\ProjectDeployment\Notella\Notella\Assets\WideLogo.scale-240.png">
       <PackagePath>Assets\WideLogo.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Ifetayo\Documents\Visual Studio 2015\Projects\Notella\Notella\bin\ARM\Debug\Notella.xr.xml">
+    <AppxPackagedFile Include="C:\Users\Ifetayo\Documents\ProjectDeployment\Notella\Notella\bin\ARM\Debug\Notella.xr.xml">
       <PackagePath>Notella.xr.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Ifetayo\Documents\Visual Studio 2015\Projects\Notella\Notella\bin\ARM\Debug\App.xbf">
+    <AppxPackagedFile Include="C:\Users\Ifetayo\Documents\ProjectDeployment\Notella\Notella\bin\ARM\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Ifetayo\Documents\Visual Studio 2015\Projects\Notella\Notella\bin\ARM\Debug\MainPage.xbf">
+    <AppxPackagedFile Include="C:\Users\Ifetayo\Documents\ProjectDeployment\Notella\Notella\bin\ARM\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Ifetayo\Documents\Visual Studio 2015\Projects\Notella\Notella\bin\ARM\Debug\NotePage.xbf">
+    <AppxPackagedFile Include="C:\Users\Ifetayo\Documents\ProjectDeployment\Notella\Notella\bin\ARM\Debug\NotePage.xbf">
       <PackagePath>NotePage.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Ifetayo\Documents\Visual Studio 2015\Projects\Notella\Notella\bin\ARM\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\Users\Ifetayo\Documents\ProjectDeployment\Notella\Notella\bin\ARM\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>

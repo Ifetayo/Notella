@@ -84,7 +84,7 @@ namespace Notella.ViewModel
         {
             DatabaseHelperClass databaseHelper = new DatabaseHelperClass();
             Note note = new Note { NoteText = newNoteText, NoteDate = DateTime.Now.ToString() };
-            databaseHelper.AddNote(note);
+            databaseHelper.AddNote(note);            
         }
 
         /**
