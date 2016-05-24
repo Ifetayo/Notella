@@ -2,7 +2,6 @@
 using SQLite;
 using System;
 using System.Collections.ObjectModel;
-using System.Diagnostics;
 using System.Linq;
 
 namespace Notella.ViewModel
@@ -25,11 +24,7 @@ namespace Notella.ViewModel
         {
             using (var dbConn = new SQLiteConnection(App.dbPath))
             {
-                ObservableCollection<Note> ListOfNotes = new ObservableCollection<Note>(dbConn.Table<Note>().OrderByDescending(d => d.NoteDate));
-                foreach (var item in ListOfNotes)
-                {
-                    Debug.WriteLine(item.NoteText);
-                }
+                ObservableCollection<Model.Note> ListOfNotes = new ObservableCollection<Model.Note>(dbConn.Table<Model.Note>().OrderByDescending(d => d.NoteID));
                 return ListOfNotes;
             }
         }
